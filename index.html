@@ -4,9 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculadora 2.0</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    
+    <div class="calculadora">
+        <div class="calculadora__tela">0</div>
+        <div class="calculadora__teclas">
+            <button class="tecla--operador" data-action="add">+</button>
+            <button class="tecla--operador" data-action="sub">-</button>
+            <button class="tecla--operador" data-action="mult">&times;</button>
+            <button class="tecla--operador" data-action="div">÷</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="border-bottom-left">0</button>
+            <button data-action="decimal">.</button>
+            <button data-action="clear">AC</button>
+            <button class="tecla--igual border-bottom-right" data-action="calcular">=</button>
+        </div>
+    </div>    
 </body>
+<script src="assets/js/script.js"></script>
 </html>
