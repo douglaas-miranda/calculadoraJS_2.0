@@ -55,3 +55,7 @@ button {
 .border-bottom-right {
     border-radius: 0 0 10px 0;
 }
+
+.esta-pressionada {
+    background-color: #b4b4b4;
+}
