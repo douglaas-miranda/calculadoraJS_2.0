@@ -1,5 +1,8 @@
 const calculadora = document.querySelector(".calculadora");
 const teclas = calculadora.querySelector(".calculadora__teclas");
+const display = document.querySelector(".calculadora__tela");
+let operadorAnteriror = '';
+let resultado = '';
 
 teclas.addEventListener("click", (e) => {
   if (e.target.matches("button")) {
@@ -31,7 +34,7 @@ teclas.addEventListener("click", (e) => {
 
 // Criando função de escrever na tela
 
-const display = document.querySelector(".calculadora__tela");
+
 
 teclas.addEventListener("click", (e) => {
   if (e.target.matches("button")) {
@@ -39,11 +42,17 @@ teclas.addEventListener("click", (e) => {
     const action = tecla.dataset.action;
     const teclaConteudo = tecla.textContent;
     const displayedNum = display.textContent;
+
     if (!action) {
-      if (displayedNum === "0") {
+      if (displayedNum === "0" || resultado !== '') {
         display.textContent = teclaConteudo;
+        resultado = '';
+      } else {
+        display.textContent = displayedNum + teclaConteudo;
       }
+      operadorAnteriror = '';
     }
+    
     if (!action) {
       if (displayedNum === "0") {
         display.textContent = teclaConteudo;
@@ -52,20 +61,15 @@ teclas.addEventListener("click", (e) => {
       }
     }
     if (action === "decimal") {
-      display.textContent = displayedNum + ".";
+      display.textContent = displayedNum + teclaConteudo;
     }
-    if (action === "add") {
-          display.textContent = displayedNum + "+";
-        }
-    if (action === "sub") {
-      display.textContent = displayedNum + "-";
-    }
-    if (action === "mult") {
-      display.textContent = displayedNum + "*";
-    }
-    if (action === "div") {
-      display.textContent = displayedNum + "/";
-    }
-    
+    if (action === "add" ||
+        action === "sub" ||
+        action === "mult"||
+        action === "div") {
+          display.textContent = displayedNum + teclaConteudo;
+        }        
   }
 });
+
+
