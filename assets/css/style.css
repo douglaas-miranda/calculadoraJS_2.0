@@ -21,6 +21,8 @@
     font-size: 40px;
     text-align: right;
     border-radius: 10px 10px 0 0;
+    overflow-x: hidden;
+    max-width: 400px;
 }
 
 button {

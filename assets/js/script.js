@@ -2,7 +2,6 @@ const calculadora = document.querySelector(".calculadora");
 const teclas = calculadora.querySelector(".calculadora__teclas");
 const display = document.querySelector(".calculadora__tela");
 let operadorAnteriror = '';
-let resultado = '';
 
 teclas.addEventListener("click", (e) => {
   if (e.target.matches("button")) {
@@ -42,6 +41,7 @@ teclas.addEventListener("click", (e) => {
     const action = tecla.dataset.action;
     const teclaConteudo = tecla.textContent;
     const displayedNum = display.textContent;
+    let resultado = '';
 
     if (!action) {
       if (displayedNum === "0" || resultado !== '') {
@@ -64,11 +64,21 @@ teclas.addEventListener("click", (e) => {
       display.textContent = displayedNum + teclaConteudo;
     }
     if (action === "add" ||
-        action === "sub" ||
-        action === "mult"||
-        action === "div") {
+        action === "sub") {
           display.textContent = displayedNum + teclaConteudo;
-        }        
+        }
+    if (action === "mult") {
+      display.textContent = displayedNum + '*';
+    }
+    if (action === "div") {
+      display.textContent = displayedNum + '/';
+    }
+    if (action === 'clear') {
+      display.textContent = '0';
+    }
+    if (action === 'calcular') {
+      display.textContent = eval(display.textContent);
+    } 
   }
 });
 
