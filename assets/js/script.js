@@ -72,15 +72,24 @@ teclas.addEventListener("click", (e) => {
     }
 
     if (action === "mult") {
-      display.textContent = displayedNum + "*";
-      operadorAnterior = "*";
-      console.log(operadorAnterior);
-      console.log;
+      valorAnterior = displayedNum;
+      ultimoDigito = valorAnterior.slice(-1);
+      console.log(ultimoDigito);
+      const validador = numeros.test(ultimoDigito);
+      console.log(validador);
+      if (validador) {
+        display.textContent = displayedNum + '*';
+      }
     }
     if (action === "div") {
-      display.textContent = displayedNum + "/";
-      operadorAnterior = "/";
-      console.log(operadorAnterior);
+      valorAnterior = displayedNum;
+      ultimoDigito = valorAnterior.slice(-1);
+      console.log(ultimoDigito);
+      const validador = numeros.test(ultimoDigito);
+      console.log(validador);
+      if (validador) {
+        display.textContent = displayedNum + '/';
+      }
     }
     if (action === "clear") {
       display.textContent = "0";
