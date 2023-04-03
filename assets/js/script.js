@@ -1,7 +1,7 @@
 const calculadora = document.querySelector(".calculadora");
 const teclas = calculadora.querySelector(".calculadora__teclas");
 const display = document.querySelector(".calculadora__tela");
-let operadorAnteriror = '';
+let operadorAnterior = '';
 
 teclas.addEventListener("click", (e) => {
   if (e.target.matches("button")) {
@@ -42,6 +42,7 @@ teclas.addEventListener("click", (e) => {
     const teclaConteudo = tecla.textContent;
     const displayedNum = display.textContent;
     let resultado = '';
+    let operadorAnterior = '';
 
     if (!action) {
       if (displayedNum === "0" || resultado !== '') {
@@ -50,28 +51,30 @@ teclas.addEventListener("click", (e) => {
       } else {
         display.textContent = displayedNum + teclaConteudo;
       }
-      operadorAnteriror = '';
+        operadorAnterior = '';
     }
-    
-    if (!action) {
-      if (displayedNum === "0") {
-        display.textContent = teclaConteudo;
-      } else {
-        display.textContent = displayedNum + teclaConteudo;
-      }
-    }
+
     if (action === "decimal") {
       display.textContent = displayedNum + teclaConteudo;
+      operadorAnterior = teclaConteudo;
+      console.log(operadorAnterior);
     }
     if (action === "add" ||
         action === "sub") {
           display.textContent = displayedNum + teclaConteudo;
+          operadorAnterior = teclaConteudo;
+          console.log(operadorAnterior);
         }
     if (action === "mult") {
       display.textContent = displayedNum + '*';
+      operadorAnterior = '*';
+      console.log(operadorAnterior);
+      console.log
     }
     if (action === "div") {
       display.textContent = displayedNum + '/';
+      operadorAnterior = '/';
+      console.log(operadorAnterior);
     }
     if (action === 'clear') {
       display.textContent = '0';
