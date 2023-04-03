@@ -1,7 +1,7 @@
 const calculadora = document.querySelector(".calculadora");
 const teclas = calculadora.querySelector(".calculadora__teclas");
 const display = document.querySelector(".calculadora__tela");
-let operadorAnterior = '';
+let operadorAnterior = "";
 
 teclas.addEventListener("click", (e) => {
   if (e.target.matches("button")) {
@@ -30,10 +30,7 @@ teclas.addEventListener("click", (e) => {
   }
 });
 
-
 // Criando função de escrever na tela
-
-
 
 teclas.addEventListener("click", (e) => {
   if (e.target.matches("button")) {
@@ -41,20 +38,21 @@ teclas.addEventListener("click", (e) => {
     const action = tecla.dataset.action;
     const teclaConteudo = tecla.textContent;
     const displayedNum = display.textContent;
-    let resultado = '';
-    let operadorAnterior = '';
-    let valorAnterior = '';
-    const oepradores = (/[-/*+]/g);
-    const numeros = (/['0123456789']/g);
+    let resultado = "";
+    let operadorAnterior = "";
+    let valorAnterior = "";
+    let ultimoDigito = "";
+    const operadores = /[-/*+]/g;
+    const numeros = /[1234567890]/g;
 
     if (!action) {
-      if (displayedNum === "0" || resultado !== '') {
+      if (displayedNum === "0" || resultado !== "") {
         display.textContent = teclaConteudo;
-        resultado = '';
+        resultado = "";
       } else {
-        display.textContent = displayedNum + teclaConteudo
+        display.textContent = displayedNum + teclaConteudo;
       }
-        operadorAnterior = '';
+      operadorAnterior = "";
     }
 
     if (action === "decimal") {
@@ -62,36 +60,33 @@ teclas.addEventListener("click", (e) => {
       operadorAnterior = teclaConteudo;
       console.log(operadorAnterior);
     }
-    if (action === "add" ||
-        action === "sub") {
-          valorAnterior = displayedNum;
-          console.log(valorAnterior);
-          console.log(numeros.test(valorAnterior.length(0, -1)));
-          console.log(numeros.test(valorAnterior.length(0, -1)));
-          }
-          // display.textContent = displayedNum + teclaConteudo;
-          // operadorAnterior = teclaConteudo;
-          // console.log(operadorAnterior);
-          // console.log(reg.test(operadorAnterior));
-        
+    if (action === "add" || action === "sub") {
+      valorAnterior = displayedNum;
+      ultimoDigito = valorAnterior.slice(-1);
+      console.log(ultimoDigito);
+      const validador = numeros.test(ultimoDigito);
+      console.log(validador);
+      if (validador) {
+        display.textContent = displayedNum + teclaConteudo;
+      }
+    }
+
     if (action === "mult") {
-      display.textContent = displayedNum + '*';
-      operadorAnterior = '*';
+      display.textContent = displayedNum + "*";
+      operadorAnterior = "*";
       console.log(operadorAnterior);
-      console.log
+      console.log;
     }
     if (action === "div") {
-      display.textContent = displayedNum + '/';
-      operadorAnterior = '/';
+      display.textContent = displayedNum + "/";
+      operadorAnterior = "/";
       console.log(operadorAnterior);
     }
-    if (action === 'clear') {
-      display.textContent = '0';
+    if (action === "clear") {
+      display.textContent = "0";
     }
-    if (action === 'calcular') {
+    if (action === "calcular") {
       display.textContent = eval(display.textContent);
-    } 
+    }
   }
 });
-
-
