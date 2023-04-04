@@ -9,24 +9,25 @@
 </head>
 <body>
     <div class="calculadora">
+        <p class="calculadora__titulo">Calculadora</p>
         <div class="calculadora__tela">0</div>
         <div class="calculadora__teclas">
             <button class="tecla--operador" data-action="add">+</button>
             <button class="tecla--operador" data-action="sub">-</button>
             <button class="tecla--operador" data-action="mult">&times;</button>
             <button class="tecla--operador" data-action="div">÷</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button class="border-bottom-left">0</button>
-            <button data-action="decimal">.</button>
-            <button data-action="clear">AC</button>
+            <button class="tecla--numerica">7</button>
+            <button class="tecla--numerica">8</button>
+            <button class="tecla--numerica">9</button>
+            <button class="tecla--numerica">4</button>
+            <button class="tecla--numerica">5</button>
+            <button class="tecla--numerica">6</button>
+            <button class="tecla--numerica">1</button>
+            <button class="tecla--numerica">2</button>
+            <button class="tecla--numerica">3</button>
+            <button class="border-bottom-left tecla--numerica">0</button>
+            <button data-action="decimal" class="tecla--numerica">.</button>
+            <button data-action="clear" class="tecla--ac">AC</button>
             <button class="tecla--igual border-bottom-right" data-action="calcular">=</button>
         </div>
     </div>    
