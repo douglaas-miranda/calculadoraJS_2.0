@@ -65,8 +65,8 @@ button {
 .tecla--igual {
     background-color: #ff6600;
     grid-column: -2;
-    grid-row: 2 / span 4;
-    height: 200px;
+    grid-row: 3 / span 3;
+    height: 150px;
 }
 
 .tecla--ac {

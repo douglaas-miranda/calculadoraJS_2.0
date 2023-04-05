@@ -27,6 +27,10 @@ teclas.addEventListener("click", (e) => {
     if (action === "calcular") {
       console.log("Calcular");
     }
+
+    if (action === "backspace") {
+      console.log('Limpar tela')
+    }
   }
 });
 
@@ -42,7 +46,6 @@ teclas.addEventListener("click", (e) => {
     let operadorAnterior = "";
     let valorAnterior = "";
     let ultimoDigito = "";
-    // let validarPonto = "";
     const numeros = /[1234567890]/g;
 
     if (!action) {
@@ -54,6 +57,8 @@ teclas.addEventListener("click", (e) => {
       }
       operadorAnterior = "";
     }
+
+// Funcão de adicionar decimal
 
     if (action === "decimal") {
       if (displayedNum.includes('.') && !/[-/*+]/g.test(displayedNum)) {
@@ -68,6 +73,9 @@ teclas.addEventListener("click", (e) => {
           }
         }
     }
+
+// Funcão de adicionar operadores adição e subtração
+
     if (action === "add" || action === "sub") {
       valorAnterior = displayedNum;
       ultimoDigito = valorAnterior.slice(-1);
@@ -79,6 +87,8 @@ teclas.addEventListener("click", (e) => {
       }
     }
 
+// Funcão de adicionar operador de multiplicação 
+
     if (action === "mult") {
       valorAnterior = displayedNum;
       ultimoDigito = valorAnterior.slice(-1);
@@ -89,6 +99,9 @@ teclas.addEventListener("click", (e) => {
         display.textContent = displayedNum + '*';
       }
     }
+
+// Funcão de adicionar operador de divisão
+    
     if (action === "div") {
       valorAnterior = displayedNum;
       ultimoDigito = valorAnterior.slice(-1);
@@ -99,9 +112,30 @@ teclas.addEventListener("click", (e) => {
         display.textContent = displayedNum + '/';
       }
     }
+
+// Funcão de adicionar backspace
+
+    if (action === "backspace") {
+      console.log('OK');
+      console.log(display.textContent.length === 1);
+      if (display.textContent === '0') {
+        return;
+      }
+      if (display.textContent.length === 1) {
+        display.textContent = '0';
+      } else {
+        display.textContent =  displayedNum.substring(0, displayedNum.length-1);
+      }
+      
+// Funcão de zerar tela
+
+    }
     if (action === "clear") {
       display.textContent = "0";
     }
+
+// Função de calcular tela  
+    
     if (action === "calcular") {
       display.textContent = eval(display.textContent);
     }
