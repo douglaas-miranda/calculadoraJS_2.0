@@ -42,7 +42,7 @@ teclas.addEventListener("click", (e) => {
     let operadorAnterior = "";
     let valorAnterior = "";
     let ultimoDigito = "";
-    let validarPonto = "";
+    // let validarPonto = "";
     const numeros = /[1234567890]/g;
 
     if (!action) {
@@ -59,7 +59,7 @@ teclas.addEventListener("click", (e) => {
       if (displayedNum.includes('.') && !/[-/*+]/g.test(displayedNum)) {
         return
       } else { 
-        if (displayedNum.slice(-1).includes('.')) {
+      if (displayedNum.split(/[-+*/]/).pop().includes('.')) {
           return
         } else {
           display.textContent = displayedNum + teclaConteudo;
@@ -76,9 +76,6 @@ teclas.addEventListener("click", (e) => {
       console.log(validador);
       if (validador) {
         display.textContent = displayedNum + teclaConteudo;
-        validarPonto = displayedNum;
-        console.log(validarPonto);
-
       }
     }
 
