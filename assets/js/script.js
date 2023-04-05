@@ -137,7 +137,11 @@ teclas.addEventListener("click", (e) => {
 // Função de calcular tela  
     
     if (action === "calcular") {
-      display.textContent = eval(display.textContent);
+      try {
+        display.textContent = eval(display.textContent);
+      } catch (e) {
+        alert('Comando inválido!');
+      }      
     }
   }
 });
