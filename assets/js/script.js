@@ -8,7 +8,7 @@ teclas.addEventListener("click", (e) => {
     const tecla = e.target;
     const action = tecla.dataset.action;
     if (!action) {
-      console.log("tecla numérica");
+      console.log("Tecla numérica");
     }
     if (
       action === "add" ||
@@ -25,7 +25,7 @@ teclas.addEventListener("click", (e) => {
       console.log("Limpar");
     }
     if (action === "calcular") {
-      console.log("calcular");
+      console.log("Calcular");
     }
   }
 });
@@ -42,7 +42,7 @@ teclas.addEventListener("click", (e) => {
     let operadorAnterior = "";
     let valorAnterior = "";
     let ultimoDigito = "";
-    const operadores = /[-/*+]/g;
+    let validarPonto = "";
     const numeros = /[1234567890]/g;
 
     if (!action) {
@@ -56,9 +56,17 @@ teclas.addEventListener("click", (e) => {
     }
 
     if (action === "decimal") {
-      display.textContent = displayedNum + teclaConteudo;
-      operadorAnterior = teclaConteudo;
-      console.log(operadorAnterior);
+      if (displayedNum.includes('.') && !/[-/*+]/g.test(displayedNum)) {
+        return
+      } else { 
+        if (displayedNum.slice(-1).includes('.')) {
+          return
+        } else {
+          display.textContent = displayedNum + teclaConteudo;
+          operadorAnterior = teclaConteudo;
+          console.log(operadorAnterior);
+          }
+        }
     }
     if (action === "add" || action === "sub") {
       valorAnterior = displayedNum;
@@ -68,6 +76,9 @@ teclas.addEventListener("click", (e) => {
       console.log(validador);
       if (validador) {
         display.textContent = displayedNum + teclaConteudo;
+        validarPonto = displayedNum;
+        console.log(validarPonto);
+
       }
     }
 
