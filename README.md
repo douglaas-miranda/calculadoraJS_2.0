@@ -1,6 +1,6 @@
 <h1> Calculadora JavaScript 2.0 </h1>
 
-![Calculadora](assets/icon/calc.png)
+![Calculadora](assets/design/calc_1.png)
 
 <h2> Sobre o Projeto </h2>
 
