@@ -1,5 +1,7 @@
 <h1> Calculadora JavaScript 2.0 </h1>
 
+![Calculadora](assets/icon/calc.png)
+
 <h2> Sobre o Projeto </h2>
 
 <h4> Olá bem vindo ao meu projeto, nele foi desenvolvido uma calculadora em Javascript, HTML e CSS, onde podemos fazer: </h4>
