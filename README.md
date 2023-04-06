@@ -1,5 +1,10 @@
 <h1> Calculadora JavaScript 2.0 </h1>
 
+<h2> Link para acessar: </h2>
+https://calculadora-js-2-0.vercel.app
+<p></p>
+
+
 ![Calculadora](assets/design/calc_1.png)
 
 <h2> Sobre o Projeto </h2>
@@ -16,3 +21,9 @@
   <li>Operações com números decimais</li>
   
 </ul>
+
+<h2> O que eu aprendi? </h2>
+
+<h5>Aprendi a usar regex para localizar certas expressões dentro do visor da calculadora.</h5>
+<h5>Aprendi a escrever dentro da tela usando o textContent</h5>
+<h5>Aprendi a usar melhor as condições if e else.</h5>
