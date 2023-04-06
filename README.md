@@ -27,3 +27,7 @@ https://calculadora-js-2-0.vercel.app
 <h5>Aprendi a usar regex para localizar certas expressões dentro do visor da calculadora.</h5>
 <h5>Aprendi a escrever dentro da tela usando o textContent</h5>
 <h5>Aprendi a usar melhor as condições if e else.</h5>
+
+<h2>Desenvolvido por:</h2>
+<h3>Douglas Miranda</h3>
+https://www.linkedin.com/in/douglas-miranda-939513247/
